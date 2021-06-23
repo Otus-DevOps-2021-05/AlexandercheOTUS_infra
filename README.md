@@ -21,3 +21,5 @@ cloud-testapp
 Домашнее задание №4 "Основные сервисы Yandex Cloud" от 17 июня, четверг 20:00
 testapp_IP = 178.154.206.60
 testapp_port = 9292
+Скрипт (bash) для автосоздания инстанса (reddit-app-2) с приложением reddit (puma) внутри запускается из корня репозитория:
+$ ./yc_create_redditapp.sh  
