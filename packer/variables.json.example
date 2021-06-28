@@ -1,7 +1,5 @@
 {
-  "variables": {
-    "service_account_key_file": "/path/to/you/key/file/key.json",
-    "folder_id": "you folder id from yandex cloud",
-    "subnet_id": "you subnet id from yandex cloud"
-  }
+    "YOUR_service_account_key_file": "/path/to/key/file/key.json",
+    "YOUR_folder_id": "your yandex cloud folder id",
+    "YOUR_subnet_id": "your yandex cloud subnet id"
 }
