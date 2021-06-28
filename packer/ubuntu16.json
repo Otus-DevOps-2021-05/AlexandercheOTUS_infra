@@ -27,5 +27,3 @@
         }
     ]
 }
-
-"{{user `aws_access_key`}}"
