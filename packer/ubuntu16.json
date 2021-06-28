@@ -10,7 +10,7 @@
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1"
         }
-    ]
+    ],
     "provisioners": [
         {
             "type": "shell",
