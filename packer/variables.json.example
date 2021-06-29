@@ -1,0 +1,5 @@
+{
+    "YOUR_service_account_key_file": "key.json.example",
+    "YOUR_folder_id": "your yandex cloud folder id",
+    "YOUR_subnet_id": "your yandex cloud subnet id"
+}
