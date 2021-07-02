@@ -18,6 +18,10 @@ provider "yandex" {
 resource "yandex_compute_instance" "app" {
   name = "reddit-app-terraform"
 
+  metadata = {
+  ssh-keys = "ubuntu:${file("/home/avc/_github/keys/yandex_cloud/appuser.pub")}"
+  }
+
   resources {
     cores  = 2
     memory = 2
