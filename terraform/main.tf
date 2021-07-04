@@ -39,4 +39,22 @@ resource "yandex_compute_instance" "app" {
     subnet_id = "e9be6poqo42ciuf6uun5"
     nat       = true
   }
+
+  provisioner "file" {
+    source = "files/puma.service"
+    destination = "/tmp/puma.service"
+  }
+
+  provisioner "remote-exec" {
+    script = "files/deploy.sh"
+  }
+
+  connection {
+    type = "ssh"
+    host = yandex_compute_instance.app.network_interface.0.nat_ip_address
+    user = "ubuntu"
+    agent = false
+    # путь до приватного ключа
+    private_key = file("/home/avc/_github/keys/yandex_cloud/appuser")
+  }
 }
