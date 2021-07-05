@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     yandex = {
-      source = "yandex-cloud/yandex"
+      source  = "yandex-cloud/yandex"
       version = "0.60.0"
     }
   }
@@ -10,16 +10,16 @@ terraform {
 provider "yandex" {
   # token     = ""
   service_account_key_file = var.service_account_key_file
-  cloud_id  = var.cloud_id
-  folder_id = var.folder_id
-  zone      = var.zone
+  cloud_id                 = var.cloud_id
+  folder_id                = var.folder_id
+  zone                     = var.zone
 }
 
 resource "yandex_compute_instance" "app" {
   name = "reddit-app-terraform"
 
   metadata = {
-  ssh-keys = "ubuntu:${file(var.public_key_path)}"
+    ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
   resources {
@@ -41,7 +41,7 @@ resource "yandex_compute_instance" "app" {
   }
 
   provisioner "file" {
-    source = "files/puma.service"
+    source      = "files/puma.service"
     destination = "/tmp/puma.service"
   }
 
@@ -50,9 +50,9 @@ resource "yandex_compute_instance" "app" {
   }
 
   connection {
-    type = "ssh"
-    host = yandex_compute_instance.app.network_interface.0.nat_ip_address
-    user = "ubuntu"
+    type  = "ssh"
+    host  = yandex_compute_instance.app.network_interface.0.nat_ip_address
+    user  = "ubuntu"
     agent = false
     # путь до приватного ключа
     private_key = file(var.private_key_path)
