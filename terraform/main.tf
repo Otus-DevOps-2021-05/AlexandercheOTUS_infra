@@ -1,13 +1,15 @@
-terraform {
-  required_providers {
-    yandex = {
-      source  = "yandex-cloud/yandex"
-      version = "0.35"
-    }
-  }
-}
+# Для последней версии terraform (1.0.1)
+# terraform {
+#   required_providers {
+#     yandex = {
+#       source  = "yandex-cloud/yandex"
+#       version = "0.60"
+#     }
+#   }
+# }
 
 provider "yandex" {
+  version                  = 0.35
   # token     = ""
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
