@@ -1,8 +1,0 @@
-service_account_key_file = "/path/to/yandex_cloud/key.json"
-cloud_id                 = "qwerty12345"
-folder_id                = "qwerty12345"
-zone                     = "ru-central1-a"
-public_key_path          = "/path/to/yandex_cloud/user.public"
-private_key_path         = "/path/to/yandex_cloud/user.private"
-image_id                 = "qwerty12345"
-subnet_id                = "qwerty12345"
