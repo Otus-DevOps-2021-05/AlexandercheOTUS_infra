@@ -1,0 +1,25 @@
+---
+- name: Install MongoDB and other
+  hosts: all
+  become: true
+  tasks:
+    - name: Add key repository
+      apt_key:
+        url: "http://www.mongodb.org/static/pgp/server-4.2.asc"
+        state: present
+
+    - name: Add MongoDB apt repository
+      apt_repository: 
+        repo: 'deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse' 
+        state: present 
+        filename: mongodb-org-4.2.list
+        update_cache: yes
+
+    - name: Installation mongodb-org, lsof, bash-completion
+      apt:
+        update_cache: yes
+        name:
+          - mongodb-org
+          - lsof
+          - bash-completion
+        state: present
