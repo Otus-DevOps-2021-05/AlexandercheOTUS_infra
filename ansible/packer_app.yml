@@ -1,0 +1,16 @@
+---
+- name: Install Ruby, Bundler and other
+  hosts: all
+  become: true
+  tasks:
+    - name: Installation git, ruby-full, ruby-bundler, build-essential, bash-completion and lsof
+      apt:
+        update_cache: yes
+        name:
+          - git
+          - ruby-full
+          - ruby-bundler
+          - build-essential
+          - bash-completion
+          - lsof
+        state: present
